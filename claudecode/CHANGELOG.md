@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.0] - 2026-07-03
+
+### Fixed
+- Auto-update now installs to `/data/claude-code/` (writable ext4) instead of `/usr/local/` (read-only OverlayFS image layer), fixing EACCES errors (upstream issues #22, #13)
+- AppArmor profile updated with execute permissions for `/data/`, `/root/`, `/tmp/` to support native Claude Code binary
+- Playwright Browser Dockerfile: added default `BUILD_FROM` arg to prevent fallback to Alpine where `apt-get` doesn't exist (upstream issue #28)
+
+### Changed
+- Extracted inline Dockerfile CMD (~150 lines) into standalone `run.sh` for maintainability
+- CLAUDE.md context file now uses heredoc instead of printf chain
+- Slug changed to `claudecode-custom` for side-by-side installation with original
+- Playwright Browser slug changed to `playwright-browser-custom`
+
 ## [1.2.63] - 2026-02-23
 
 ### Fixed

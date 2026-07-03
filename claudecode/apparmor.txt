@@ -39,8 +39,8 @@ profile claudecode flags=(attach_disconnected,mediate_deleted) {
   /usr/local/** ixr,
   /usr/libexec/** ixr,
 
-  # Add-on data
-  /data/** rwk,
+  # Add-on data (ix = inherit execute for runtime-updated claude binary)
+  /data/** rwkix,
 
   # Home Assistant config - main working directory
   /homeassistant/ r,
@@ -60,10 +60,10 @@ profile claudecode flags=(attach_disconnected,mediate_deleted) {
   /config/ r,
   /config/** rwk,
 
-  # Claude Code and user home
+  # Claude Code and user home (ix = allow executing binaries)
   /root/ r,
-  /root/** rwk,
-  /tmp/** rwk,
+  /root/** rwkix,
+  /tmp/** rwkix,
 
   # Node.js modules
   /usr/lib/node_modules/** ixmr,

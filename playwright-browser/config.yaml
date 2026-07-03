@@ -1,8 +1,8 @@
-name: Playwright Browser
+name: Playwright Browser (Custom)
 description: Headless Chromium browser with CDP endpoint for browser automation
-version: "0.1.11"
-slug: playwright-browser
-url: https://github.com/robsonfelix/robsonfelix-hass-addons
+version: "0.2.0"
+slug: playwright-browser-custom
+url: https://github.com/twoleftankles/robsonfelix-hass-addons
 arch:
   - amd64
   - aarch64

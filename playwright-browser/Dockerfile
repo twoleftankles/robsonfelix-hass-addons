@@ -1,4 +1,4 @@
-ARG BUILD_FROM
+ARG BUILD_FROM=mcr.microsoft.com/playwright:v1.57.0-noble
 FROM ${BUILD_FROM}
 
 # Labels
