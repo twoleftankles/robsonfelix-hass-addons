@@ -144,9 +144,9 @@ WORKDIR /homeassistant
 HEALTHCHECK --interval=30s --timeout=10s --start-period=10s --retries=3 \
     CMD curl -sf http://localhost:7681/ || exit 1
 
-# Copy startup script
-COPY run.sh /run.sh
-RUN chmod +x /run.sh
+# Copy startup script to a path covered by AppArmor (/usr/local/** ixr)
+COPY run.sh /usr/local/bin/run.sh
+RUN chmod +x /usr/local/bin/run.sh
 
 ENTRYPOINT []
-CMD ["/run.sh"]
+CMD ["/usr/local/bin/run.sh"]
